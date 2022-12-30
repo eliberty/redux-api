@@ -83,7 +83,10 @@ export default function reduxApi(config, baseConfig) {
     },
     actions: {},
     reducers: {},
-    events: {}
+    events: {},
+    get(key) {
+      return fetchHolder[key] ?? null;
+    }
   };
   function fnConfigCallback(memo, value, key) {
     const opts =
